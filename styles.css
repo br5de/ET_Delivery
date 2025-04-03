@@ -1,0 +1,268 @@
+/* Reset General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background:#a6a8ad;
+    color: #1C1C1C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px; /* esto es el logo de ET*/
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('/gx.jpeg') no-repeat center center/cover;
+    color: white;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    background: #7a7272;
+    color: rgb(247, 243, 243);
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.hero-content button:hover {
+    background: #E0E0E0; /* Color ligeramente más oscuro al hacer hover */
+    transform: translateY(10px); /* Eleva el botón 3px */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Agrega sombra para mejor efecto */
+    color:black
+}
+
+/*-------------------------------------------------------------------*/
+/* Sección de Servicios */
+
+
+
+#servicios {
+    padding: 50px;
+    text-align: center;
+    background: rgb(0, 1, 1);
+    
+}
+
+ #servicios h2 {
+    color: #d4c7c7;
+    margin-bottom: 30px;
+ }
+
+.servicios-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.servicio {
+    background: #E0E0E0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(160, 156, 156, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Efectos hover para las tarjetas de servicio */
+.servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background: #c0bcbc; /* fondo de las tarjetas del servicio*/
+}
+
+/* Estilos para los íconos y textos dentro de las tarjetas */
+.servicio img {
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.servicio:hover img {
+    transform: scale(1.1);
+}
+
+.servicio h3 {
+    margin: 15px 0;
+    color: #1E3A8A; /* Para mantener consistencia con tu paleta de colores */
+}
+
+.servicio p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+
+/*------------------------------------------------------------------------------------------*/
+/* Sección de Productos */
+#productos {
+    padding: 50px;
+    text-align: center;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por fila */
+    gap: 30px; /* Espacio entre productos */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.producto img {
+    width: 200px; /* Aumenta el tamaño de las imágenes */
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10%;
+    transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.producto h3 {
+    margin-top: 10px;
+}
+
+/* Sección de Contacto */
+#contacto {
+    padding: 30px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 8px;
+    background: #a6a8ad;
+    color: rgb(25, 24, 24);
+}
+/* Hero Section */
+.hero {
+    background: url(/bgr.avif) no-repeat center center/cover;
+    color: white;
+    height: 100vh; /* Pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para mejor visibilidad del texto */
+    z-index: 0;
+}
+
+#filtros {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#filtros button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#filtros button:hover {
+    background: #4A90E2;
+}
+
+#subfiltros-zapatillas button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+}
+#subfiltros-zapatillas button:hover {
+    background: #4A90E2;
+}
+
+
+#contacto a {
+    color: #1E3A8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+#contacto a:hover {
+    text-decoration: underline;
+}
+

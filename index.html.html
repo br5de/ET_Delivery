@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ET Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <link rel="Icon" type="jpg"
+    href="/logo2.webp"
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">ET Delivery</div>
+        <nav>
+            <ul>
+                <h3>StockX</h3>
+                <h3>Ebay</h3>
+                <h3>Amazon</h3>
+                <h3>Dickies</h3>
+                <h3>GymShark</h3>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>¡Porque llegar a casa es lo más importante!</h1>
+            <p>Compra las mejores marcas de ropa y calzado directamente desde USA.</p>
+            <button onclick="window.location.href='#productos'">👟Explorar Productos</button>
+        </div>
+    </section>
+
+    <section id="servicios" data-aos="fade-up">
+        <h2>🌟Servicios a tu Alcance</h2> 
+        <div class="servicios-grid">
+            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
+                <h3>🛸 Tus zapatos favoritos hasta la puerta de tu casa</h3>
+                <p>Consigue los tenis más exclusivos y de las tiendas más reconocidas de USA.</p>
+            </div>
+            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
+                <h3>🛒 Las mejores prendas de ropa</h3>
+                <p>Explora y adquiere ropa de las marcas más destacadas directamente desde USA.</p>
+            </div>
+            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
+                <h3>🚀 Seguridad y Confianza en la entrega</h3>
+                <p>Garantizamos entregas seguras, confiables y respaldadas por nuestro compromiso contigo.</p>
+            </div>
+            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
+                <h3>🏪 Artículos y Tiendas</h3>
+                <p>No solo ropa y tenis: también traemos artículos personalizados para ti de las mejores tiendas de USA.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Sección de Productos -->    
+  <section id="productos">
+    <h2>Productos Galácticos Recientes</h2>
+    
+     <!-- Filtros -->
+     <div id="filtros">
+        <button onclick="filtrarProductos('zapatillas')">Sneakers</button>
+        <button onclick="filtrarProductos('ropa')">Ropa</button>
+    </div>
+    
+    
+    <!-- Subfiltros para Zapatillas -->
+    <div id="subfiltros-zapatillas" class="subfiltros">
+        <button onclick="filtrarZapatillas('deportivas')">Deportivas</button>
+        <button onclick="filtrarZapatillas('casuales')">Street</button>
+    </div>
+
+    <!-- Productos -->
+    <div class="productos-grid">
+        <!-- Zapatillas Deportivas -->
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
+            <img src="/sk_1.avif" alt="moradas">
+            <h3>Nike Kyrie 7 Daughters GS</h3>
+            <p>Deportivas - Voleibol.</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
+            <img src="/sk_2.jpg" alt="Nike PG 5 TB Wolf Grey Men's">
+            <h3>Nike PG 5 TB Wolf Grey </h3>
+            <p>Deportivas - Voleibol.</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
+            <img src="/sk_4.jpg" alt="Nike Nasa">
+            <h3>Nike PG 3 NASA White</h3>
+            <p>Deportivas - Voleibol.</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
+            <img src="/pg aqua.png" alt="Nike aqua">
+            <h3>Nike PG 3 Black aqua</h3>
+            <p>Deportivas - Voleibol.</p>
+        </div>
+       
+
+        
+    
+        <!-- Zapatillas Casuales -->
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
+            <img src="/samba.png" alt="Adidas Samba OG Black White Gum">
+            <h3>Adidas Samba OG Black White Gum</h3>
+            <p>Classic Sneakers</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
+            <img src="/reebok.webp" alt="Reebok Club C 85 Vintage">
+            <h3>Reebok Club C 85 Vintage Mens</h3>
+            <p>Classic Sneakers</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
+            <img src="/sk_5.webp" alt="adidas spezial">
+            <h3>Adidas Spezial HandBall Black Gum</h3>
+            <p>Classic Sneakers</p>
+        </div>
+        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
+            <img src="/gazele bold.png" alt="gazelle">
+            <h3>Adidas Gazelle Bold core Black White</h3>
+            <p>Classic Sneakers</p>
+        </div>
+
+        <!-- Ropa -->
+        <div class="producto" data-categoria="ropa">
+            <img src="/ropa1.jpg" alt="Hoodie Nike beige">
+            <h3>Hoodie Nike Beige</h3>
+        </div>
+        <div class="producto" data-categoria="ropa">
+            <img src="/ropa2.jpg" alt="hoddie nike ">
+            <h3>Hoodie Nike Black</h3>
+        </div>
+        <div class="producto" data-categoria="ropa">
+            <img src="/ropa3.jpg" alt="columbia half zip">
+            <h3>Columbia Half Zip Black</h3>
+        </div>
+        <div class="producto" data-categoria="ropa">
+            <img src="/ropa4.jpg" alt="GymShark">
+            <h3>GymShark Everyday Seamless</h3>
+        </div>
+        
+    </div>
+</section>
+
+
+    <!-- Sección de Contacto -->
+  <section id="contacto">
+        <h2>Contacto</h2>
+        <p>🌌 Para explorar más detalles o solicitar un producto, ¡visítanos en Instagram! 🛸 <a href="https://www.instagram.com/et_deliver/" target="_blank">🚀 Click aquí</a></p>
+        <p>💬 Conéctate con nosotros por WhatsApp: 📱 6134-8451. ¡Estamos listos para recivir tu pedido!</p>
+    </section>
+   
+    
+   <!--   <section id="contacto" class="contact-section">
+        <h2>Contacto</h2>
+        <form id="contact-form" method="post" action="/send_email">
+        <input type="text" name="Nombre" placeholder="Nombre" required>
+        <input type="email" name="correo" placeholder="Mensaje" required>
+        <textarea name="Mensaje" placeholder=" mensaje" required ></textarea>
+        <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <div id="flash-messages" class="flash.flash-messages"></div>
+-->
+
+
+
+
+
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 Tu conexion directa con el mundo, sin limites ni distancias.</p>
+    </footer>
+
+
+<script src="js.js"></script> <!-- Conectar JavaScript -->
+    
+</body>
+</html>
