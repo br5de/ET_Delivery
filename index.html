@@ -1,206 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ET Delivery</title>
-  <link rel="icon" type="image/webp" href="logo2.webp">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: black;
-      padding: 10px 0;
-      color: white;
-      text-align: center;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      background-color: #222;
-      padding: 10px 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: lime;
-    }
-
-    .hero {
-      background: url(bgr.avif) no-repeat center center/cover;
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      max-width: 600px;
-    }
-
-    .productos {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .producto {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      transition: box-shadow 0.3s;
-      background: white;
-    }
-
-    .producto:hover {
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
-    .producto img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .filtros, #subfiltros-zapatillas {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    button {
-      margin: 5px;
-      padding: 10px 20px;
-      border: none;
-      background: black;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: green;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .hero p {
-        font-size: 1em;
-        padding: 0 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>ET Delivery</h1>
-    <p>Ropa y calzado importado desde USA</p>
+    <nav>
+      <ul>
+        <li><button class="nav-btn" onclick="mostrarSeccion('inicio')">Inicio</button></li>
+        <li><button class="nav-btn" onclick="mostrarSeccion('ropa')">Ropa</button></li>
+        <li><button class="nav-btn" onclick="mostrarSeccion('calzado')">Calzado</button></li>
+        <li><button class="nav-btn carrito" onclick="mostrarCarrito()">
+          🛒
+        </button></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#">StockX</a></li>
-      <li><a href="#">Ebay</a></li>
-      <li><a href="#">Amazon</a></li>
-      <li><a href="#">Dickies</a></li>
-      <li><a href="#">GymShark</a></li>
-    </ul>
-  </nav>
+  <main>
+    <section id="inicio" class="seccion activa">
+      <h2>Bienvenido a ET Delivery</h2>
+      <p>Importamos ropa y calzado directamente desde USA.</p>
+    </section>
 
-  <section class="hero" data-aos="zoom-in">
-    <h1>Bienvenido a ET Delivery</h1>
-    <p>Explora nuestra selección exclusiva de ropa y calzado</p>
-  </section>
+    <section id="ropa" class="seccion">
+      <h2>Categoría: Ropa</h2>
+      <div class="producto">
+        <p>Camisa Deportiva</p>
+        <button onclick="agregarAlCarrito('Camisa Deportiva')">Agregar al carrito</button>
+      </div>
+    </section>
 
-  <section class="filtros">
-    <h2>Filtrar productos por categoría</h2>
-    <button onclick="filtrarProductos('camisas')">Camisas</button>
-    <button onclick="filtrarProductos('pantalones')">Pantalones</button>
-    <button onclick="filtrarProductos('zapatillas')">Sneakers</button>
-  </section>
+    <section id="calzado" class="seccion">
+      <h2>Categoría: Calzado</h2>
+      <div class="producto">
+        <p>Tenis Nike</p>
+        <button onclick="agregarAlCarrito('Tenis Nike')">Agregar al carrito</button>
+      </div>
+    </section>
 
-  <section id="subfiltros-zapatillas">
-    <h3>Filtrar Sneakers</h3>
-    <button onclick="filtrarZapatillas('deportivas')">Deportivas</button>
-    <button onclick="filtrarZapatillas('street')">Street</button>
-  </section>
+    <section id="carrito" class="seccion">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+    </section>
+  </main>
 
-  <section class="productos">
-    <div class="producto" data-categoria="camisas">
-      <img src="camisa1.jpg" alt="Camisa 1">
-      <h3>Camisa Nike</h3>
-      <p>$35</p>
-    </div>
-    <div class="producto" data-categoria="pantalones">
-      <img src="pantalon1.jpg" alt="Pantalón 1">
-      <h3>Pantalón Adidas</h3>
-      <p>$50</p>
-    </div>
-    <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
-      <img src="zapatilla1.jpg" alt="Zapatilla Deportiva">
-      <h3>Zapatilla Running</h3>
-      <p>$70</p>
-    </div>
-    <div class="producto" data-categoria="zapatillas" data-subcategoria="street">
-      <img src="zapatilla2.jpg" alt="Zapatilla Street">
-      <h3>Zapatilla Streetwear</h3>
-      <p>$75</p>
-    </div>
-  </section>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    document.getElementById("subfiltros-zapatillas").style.display = "none";
-
-    function filtrarProductos(categoria) {
-      let productos = document.querySelectorAll(".producto");
-      productos.forEach(p => {
-        p.style.display = p.dataset.categoria === categoria ? "block" : "none";
-      });
-
-      document.getElementById("subfiltros-zapatillas").style.display = categoria === "zapatillas" ? "block" : "none";
-    }
-
-    function filtrarZapatillas(subcategoria) {
-      let productos = document.querySelectorAll(".producto[data-categoria='zapatillas']");
-      productos.forEach(p => {
-        p.style.display = p.dataset.subcategoria === subcategoria ? "block" : "none";
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
