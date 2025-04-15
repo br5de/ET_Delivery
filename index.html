@@ -1,184 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ET Delivery</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ET Delivery</title>
+  <link rel="icon" type="image/webp" href="logo2.webp">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-    <link rel="Icon" type="jpg"
-    href="logo2.webp"
+    header {
+      background-color: black;
+      padding: 10px 0;
+      color: white;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      background-color: #222;
+      padding: 10px 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: lime;
+    }
+
+    .hero {
+      background: url(bgr.avif) no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+    }
+
+    .productos {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+      background: white;
+    }
+
+    .producto:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .producto img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .filtros, #subfiltros-zapatillas {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: green;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+        padding: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <div class="logo">ET Delivery</div>
-        <nav>
-            <ul>
-                <h3>StockX</h3>
-                <h3>Ebay</h3>
-                <h3>Amazon</h3>
-                <h3>Dickies</h3>
-                <h3>GymShark</h3>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>ET Delivery</h1>
+    <p>Ropa y calzado importado desde USA</p>
+  </header>
 
-    <!-- Sección de Inicio -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>¡Porque llegar a casa es lo más importante!</h1>
-            <p>Compra las mejores marcas de ropa y calzado directamente desde USA.</p>
-            <button onclick="window.location.href='#productos'">👟Explorar Productos</button>
-        </div>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#">StockX</a></li>
+      <li><a href="#">Ebay</a></li>
+      <li><a href="#">Amazon</a></li>
+      <li><a href="#">Dickies</a></li>
+      <li><a href="#">GymShark</a></li>
+    </ul>
+  </nav>
 
-    <section id="servicios" data-aos="fade-up">
-        <h2>🌟Servicios a tu Alcance</h2> 
-        <div class="servicios-grid">
-            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
-                <h3>🛸 Tus zapatos favoritos hasta la puerta de tu casa</h3>
-                <p>Consigue los tenis más exclusivos y de las tiendas más reconocidas de USA.</p>
-            </div>
-            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
-                <h3>🛒 Las mejores prendas de ropa</h3>
-                <p>Explora y adquiere ropa de las marcas más destacadas directamente desde USA.</p>
-            </div>
-            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
-                <h3>🚀 Seguridad y Confianza en la entrega</h3>
-                <p>Garantizamos entregas seguras, confiables y respaldadas por nuestro compromiso contigo.</p>
-            </div>
-            <div class="servicio" data-aos="fade-left" data-aos-delay="300">
-                <h3>🏪 Artículos y Tiendas</h3>
-                <p>No solo ropa y tenis: también traemos artículos personalizados para ti de las mejores tiendas de USA.</p>
-            </div>
-        </div>
-        
-    </section>
+  <section class="hero" data-aos="zoom-in">
+    <h1>Bienvenido a ET Delivery</h1>
+    <p>Explora nuestra selección exclusiva de ropa y calzado</p>
+  </section>
 
-    <!-- Sección de Productos -->    
-  <section id="productos">
-    <h2>Productos Galácticos Recientes</h2>
-    
-     <!-- Filtros -->
-     <div id="filtros">
-        <button onclick="filtrarProductos('zapatillas')">Sneakers</button>
-        <button onclick="filtrarProductos('ropa')">Ropa</button>
+  <section class="filtros">
+    <h2>Filtrar productos por categoría</h2>
+    <button onclick="filtrarProductos('camisas')">Camisas</button>
+    <button onclick="filtrarProductos('pantalones')">Pantalones</button>
+    <button onclick="filtrarProductos('zapatillas')">Sneakers</button>
+  </section>
+
+  <section id="subfiltros-zapatillas">
+    <h3>Filtrar Sneakers</h3>
+    <button onclick="filtrarZapatillas('deportivas')">Deportivas</button>
+    <button onclick="filtrarZapatillas('street')">Street</button>
+  </section>
+
+  <section class="productos">
+    <div class="producto" data-categoria="camisas">
+      <img src="camisa1.jpg" alt="Camisa 1">
+      <h3>Camisa Nike</h3>
+      <p>$35</p>
     </div>
-    
-    
-    <!-- Subfiltros para Zapatillas -->
-    <div id="subfiltros-zapatillas" class="subfiltros">
-        <button onclick="filtrarZapatillas('deportivas')">Deportivas</button>
-        <button onclick="filtrarZapatillas('casuales')">Street</button>
+    <div class="producto" data-categoria="pantalones">
+      <img src="pantalon1.jpg" alt="Pantalón 1">
+      <h3>Pantalón Adidas</h3>
+      <p>$50</p>
     </div>
-
-    <!-- Productos -->
-    <div class="productos-grid">
-        <!-- Zapatillas Deportivas -->
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
-            <img src="sk_1.avif" alt="moradas">
-            <h3>Nike Kyrie 7 Daughters GS</h3>
-            <p>Deportivas - Voleibol.</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
-            <img src="ET_Delivery/sk_2.jpg" alt="Nike PG 5 TB Wolf Grey Men's">
-            <h3>Nike PG 5 TB Wolf Grey </h3>
-            <p>Deportivas - Voleibol.</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
-            <img src="sk_4.jpg" alt="Nike Nasa">
-            <h3>Nike PG 3 NASA White</h3>
-            <p>Deportivas - Voleibol.</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
-            <img src="pg aqua.png" alt="Nike aqua">
-            <h3>Nike PG 3 Black aqua</h3>
-            <p>Deportivas - Voleibol.</p>
-        </div>
-       
-
-        
-    
-        <!-- Zapatillas Casuales -->
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
-            <img src="samba.png" alt="Adidas Samba OG Black White Gum">
-            <h3>Adidas Samba OG Black White Gum</h3>
-            <p>Classic Sneakers</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
-            <img src="reebok.webp" alt="Reebok Club C 85 Vintage">
-            <h3>Reebok Club C 85 Vintage Mens</h3>
-            <p>Classic Sneakers</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
-            <img src="sk_5.webp" alt="adidas spezial">
-            <h3>Adidas Spezial HandBall Black Gum</h3>
-            <p>Classic Sneakers</p>
-        </div>
-        <div class="producto" data-categoria="zapatillas" data-subcategoria="casuales">
-            <img src="gazele bold.png" alt="gazelle">
-            <h3>Adidas Gazelle Bold core Black White</h3>
-            <p>Classic Sneakers</p>
-        </div>
-
-        <!-- Ropa -->
-        <div class="producto" data-categoria="ropa">
-            <img src="ropa1.jpg" alt="Hoodie Nike beige">
-            <h3>Hoodie Nike Beige</h3>
-        </div>
-        <div class="producto" data-categoria="ropa">
-            <img src="ropa2.jpg" alt="hoddie nike ">
-            <h3>Hoodie Nike Black</h3>
-        </div>
-        <div class="producto" data-categoria="ropa">
-            <img src="ropa3.jpg" alt="columbia half zip">
-            <h3>Columbia Half Zip Black</h3>
-        </div>
-        <div class="producto" data-categoria="ropa">
-            <img src="ropa4.jpg" alt="GymShark">
-            <h3>GymShark Everyday Seamless</h3>
-        </div>
-        
+    <div class="producto" data-categoria="zapatillas" data-subcategoria="deportivas">
+      <img src="zapatilla1.jpg" alt="Zapatilla Deportiva">
+      <h3>Zapatilla Running</h3>
+      <p>$70</p>
     </div>
-</section>
+    <div class="producto" data-categoria="zapatillas" data-subcategoria="street">
+      <img src="zapatilla2.jpg" alt="Zapatilla Street">
+      <h3>Zapatilla Streetwear</h3>
+      <p>$75</p>
+    </div>
+  </section>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
 
-    <!-- Sección de Contacto -->
-  <section id="contacto">
-        <h2>Contacto</h2>
-        <p>🌌 Para explorar más detalles o solicitar un producto, ¡visítanos en Instagram! 🛸 <a href="https://www.instagram.com/et_deliver/" target="_blank">🚀 Click aquí</a></p>
-        <p>💬 Conéctate con nosotros por WhatsApp: 📱 6134-8451. ¡Estamos listos para recivir tu pedido!</p>
-    </section>
-   
-    
-   <!--   <section id="contacto" class="contact-section">
-        <h2>Contacto</h2>
-        <form id="contact-form" method="post" action="/send_email">
-        <input type="text" name="Nombre" placeholder="Nombre" required>
-        <input type="email" name="correo" placeholder="Mensaje" required>
-        <textarea name="Mensaje" placeholder=" mensaje" required ></textarea>
-        <button type="submit">Enviar</button>
-        </form>
-    </section>
+    document.getElementById("subfiltros-zapatillas").style.display = "none";
 
-    <div id="flash-messages" class="flash.flash-messages"></div>
--->
+    function filtrarProductos(categoria) {
+      let productos = document.querySelectorAll(".producto");
+      productos.forEach(p => {
+        p.style.display = p.dataset.categoria === categoria ? "block" : "none";
+      });
 
+      document.getElementById("subfiltros-zapatillas").style.display = categoria === "zapatillas" ? "block" : "none";
+    }
 
-
-
-
-
-    <!-- Pie de Página -->
-    <footer>
-        <p>&copy; 2024 Tu conexion directa con el mundo, sin limites ni distancias.</p>
-    </footer>
-
-
-<script src="js.js"></script> <!-- Conectar JavaScript -->
-    
+    function filtrarZapatillas(subcategoria) {
+      let productos = document.querySelectorAll(".producto[data-categoria='zapatillas']");
+      productos.forEach(p => {
+        p.style.display = p.dataset.subcategoria === subcategoria ? "block" : "none";
+      });
+    }
+  </script>
 </body>
 </html>
