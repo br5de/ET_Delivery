@@ -1,69 +1,47 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Inicializa AOS
-    AOS.init({
-        duration: 1000,
-        once: false
-    });
+let carrito = [];
 
-    // Filtrar productos por categoría
-    window.filtrarProductos = function(categoria) {
-        const productos = document.querySelectorAll('.producto');
-        const subfiltrosZapatillas = document.getElementById('subfiltros-zapatillas');
+function mostrarSeccion(id) {
+  document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activa'));
+  document.getElementById(id).classList.add('activa');
+}
 
-        // Mostrar u ocultar subfiltros para zapatillas
-        if (subfiltrosZapatillas) {
-            subfiltrosZapatillas.style.display = (categoria === 'zapatillas') ? 'block' : 'none';
-        }
+function mostrarCarrito() {
+  mostrarSeccion('carrito');
+  actualizarCarrito();
+}
 
-        // Mostrar u ocultar productos según la categoría seleccionada
-        productos.forEach(producto => {
-            if (categoria === 'todos') {
-                producto.style.display = ''; // Mostrar todos los productos
-            } else if (producto.getAttribute('data-categoria') === categoria) {
-                producto.style.display = ''; // Mostrar productos de la categoría seleccionada
-            } else {
-                producto.style.display = 'none'; // Ocultar productos de otras categorías
-            }
-        });
-    };
+function agregarAlCarrito(producto) {
+  carrito.push(producto);
+  animarCarrito();
+  alert(`${producto} agregado al carrito`);
+}
 
-    // Filtrar zapatillas por subcategoría
-    window.filtrarZapatillas = function(subcategoria) {
-        const productos = document.querySelectorAll('.producto[data-categoria="zapatillas"]');
+function actualizarCarrito() {
+  const lista = document.getElementById('lista-carrito');
+  lista.innerHTML = '';
+  carrito.forEach((producto, index) => {
+    const li = document.createElement('li');
+    li.textContent = producto;
 
-        productos.forEach(producto => {
-            if (subcategoria === 'todos') {
-                producto.style.display = ''; // Mostrar todas las zapatillas
-            } else if (producto.getAttribute('data-subcategoria') === subcategoria) {
-                producto.style.display = ''; // Mostrar zapatillas de la subcategoría seleccionada
-            } else {
-                producto.style.display = 'none'; // Ocultar otras zapatillas
-            }
-        });
-    };
+    const btnEliminar = document.createElement('button');
+    btnEliminar.textContent = 'Eliminar';
+    btnEliminar.classList.add('eliminar');
+    btnEliminar.onclick = () => eliminarDelCarrito(index);
 
-    // Hacer que el botón "Mostrar productos" haga el scroll más lento
-    const botonMostrar = document.getElementById("boton-mostrar-productos");
-    if (botonMostrar) {
-        botonMostrar.addEventListener("click", function(event) {
-            event.preventDefault(); // Evita que la página haga un salto repentino
+    li.appendChild(btnEliminar);
+    lista.appendChild(li);
+  });
+}
 
-            const productosSection = document.getElementById("seccion-productos");
-            if (productosSection) {
-                let scrollStep = 0.4; // Pequeño desplazamiento en píxeles
-                let scrollInterval = 5; // Intervalo en milisegundos
-                let targetPosition = productosSection.offsetTop;
-                let currentPosition = window.scrollY;
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  actualizarCarrito();
+}
 
-                let scrollAnimation = setInterval(function() {
-                    if (currentPosition < targetPosition) {
-                        currentPosition += scrollStep;
-                        window.scrollTo(0, currentPosition);
-                    } else {
-                        clearInterval(scrollAnimation);
-                    }
-                }, scrollInterval);
-            }
-        });
-    }
-});
+function animarCarrito() {
+  const btnCarrito = document.querySelector('.carrito');
+  btnCarrito.style.transform = 'scale(1.3)';
+  setTimeout(() => {
+    btnCarrito.style.transform = 'scale(1)';
+  }, 300);
+}
